@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Document</title>
+
+	<script src="{% static 'libs/gsap/gsap.min.js' %}" defer></script>
+	<script src="{% static 'libs/gsap/ScrollTrigger.min.js' %}" defer></script>
+	<script src="{% static 'libs/gsap/ScrollSmoother.min.js' %}" defer></script>
+
+	<link rel="stylesheet" href="{% static 'main.css' %}">
+	<script src="{% static 'js/app.js' %}" defer></script>
+
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="content">
+
+			<header class="hero-section">
+				<img data-speed=".6" class="hero" src="{{student.img.img.url}}" alt="Alt" >
+				<div class="container">
+					<div data-speed=".75" class="main-header">
+						<h1 class="main-title">{{student.i_f_o}} {{student.clas}}-В</h1>
+					</div>
+				</div>
+			</header>
+			<div class="portfolio">
+				<div class="container">
+					{% for i in info %}
+					<main class="gallery">
+
+
+						<div data-speed=".9" class="gallery__left">
+
+							<img class="gallery__item" src="{{i.img.img.url}}" alt="Alt">
+
+							<div class="text-block gallery__item">
+								<h2 class="text-block__h">{{i.info}}</h2>
+								<!-- <p class="text-block__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor amount scrolling.</p> -->
+							</div>
+
+
+						</div>
+
+
+					</main>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

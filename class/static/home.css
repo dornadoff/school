@@ -1,0 +1,13 @@
+.img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0px;
+}
+
+.container {
+    width: 230px;
+    height: 230px;
+    display: inline-block;
+    padding-right: 50px;
+    padding-bottom: 0px;
+}
