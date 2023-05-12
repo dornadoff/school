@@ -1,0 +1,42 @@
+.input-label {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.my-input {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 270px;
+  height: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+.my-button {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  height: 60px;
+}
+
+.my-button:hover {
+  background-color: #0069d9;
+}

@@ -15,7 +15,25 @@
 
 	<link rel="stylesheet" href="{% static 'main.css' %}">
 	<script src="{% static 'js/app.js' %}" defer></script>
-
+ 	<style>
+		.my-button {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  height: 60px;
+}
+	</style>
 </head>
 <body>
 
@@ -51,7 +69,17 @@
 
 					</main>
 					{% endfor %}
+					<div>
+						<a href="/student/{{student.id}}/create"> <button class="my-button" >Добавить</button> </a>
 				</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Ошибка</title>
+    <link rel="stylesheet" href="{% static 'add-info.css' %}">
+</head>
+<body>
+    <div class="top-panel"><button onclick="goBack()" class="back-button" style="border: 2px solid black; border-radius: 5px;">Назад</button> <!-- кнопка "назад" -->
+    </div>
+<center> <h1 style="color: red">Вы неправильно заполнили форму</h1> </center>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</body>
+</html>
