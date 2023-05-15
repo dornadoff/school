@@ -27,5 +27,7 @@ urlpatterns = [
     path("class/<int:gt>/students/", StudentsView.as_view()),
     path("student/<int:gt>/", StudentView.as_view()),
     path("student/<int:gt>/create/", InfoStudentAdd.as_view()),
-    path("error/form/", ErrorFormView.as_view())
+    path("error/form/", ErrorFormView.as_view()),
+    path("login/", LoginView.as_view()),
+    path("register/", RegisterView.as_view())
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

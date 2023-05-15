@@ -1,3 +1,5 @@
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import *
@@ -5,6 +7,43 @@ from .models import *
 class HomePage(View):
     def get(self, request):
         return render(request, "home.html")
+
+class LoginView(View):
+    def get(self, request):
+        return render(request, "login.html")
+
+    def post(self, request):
+            user = authenticate(request, username=request.POST.get("username"),
+                                password=request.POST.get("password"))
+            if user is None:
+                return redirect("/login/")
+            login(request, user)
+            return redirect("/student/2/")
+
+class RegisterView(View):
+    def get(self, request):
+        return render(request, "register.html")
+
+    def post(self, request):
+        b = User.objects.filter(
+            username=request.POST.get("username")
+        )
+        if len(b) < 1:
+
+            Student.objects.create(
+                i_f_o=request.POST.get("fullname"),
+                user=User.objects.create_user(
+                    username=request.POST.get("username"),
+                    password=request.POST.get("password")
+                ),
+                clas=9,
+                img=Img.objects.create(
+                    name=f"{request.POST.get('fullname')}",
+                    img=request.FILES.get("image")),
+            )
+            return redirect(f"/student/{Student.objects.last().id}/")
+        return HttpResponse(" <center> <h1>Извените но этот аккаунт уже существует</h1> </center>")
+
 
 class StudentsView(View):
     def get(self, request, gt):
@@ -18,11 +57,12 @@ class StudentView(View):
         student = Student.objects.get(id=gt)
         info = InfoStudent.objects.filter(student=student)
         if len(info) < 1:
-            info = {"info": {"info":"Net infi"}}
+            info = {"info": "Нет изображений"}
         data = {
             "student": student,
             "info": info,
         }
+        print(data)
         return render(request, "student.html", data)
 
 class InfoStudentAdd(View):

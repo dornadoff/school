@@ -11,7 +11,7 @@ class Student(models.Model):
     i_f_o = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     clas = models.SmallIntegerField()
-    img = models.ForeignKey(Img, on_delete=models.CASCADE)
+    img = models.ForeignKey(Img, on_delete=models.CASCADE, null=True)
     number = models.CharField(max_length=14)
     social_network = models.CharField(max_length=1000)
     def __str__(self):

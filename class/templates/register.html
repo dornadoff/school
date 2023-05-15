@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>Log in</title>
+      <link rel="stylesheet" href="{% static 'login.css' %}">
+      <link rel="stylesheet" href="{% static 'drugoe.css' %}">
+      <link rel="stylesheet" href="{% static 'add-info.css' %}">
+  <style>
+    body {
+    background: #5252ffbd;
+    overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+<div class="container">
+  <div class="frame">
+    <div class="nav">
+      <ul class=links">
+        <li class="signup-inactive">Sign up</li>
+      </ul>
+    </div>
+
+      <form class="form-signin" method="post" enctype="multipart/form-data"> {% csrf_token %}
+          <label for="fullname">Фамилия и Имя</label>
+          <input class="form-styling" type="text" name="fullname" placeholder=""/>
+          <label>Username</label>
+          <input class="form-styling" type="text" name="username" placeholder=""/>
+        <div class="input__wrapper">
+               <input name="image" type="file" id="input__file" class="input input__file" multiple>
+               <label for="input__file" class="input__file-button">
+                  <span class="input__file-icon-wrapper"><img class="input__file-icon" src="/media/icon.png" alt="Выбрать файл" width="25"></span>
+                  <span class="input__file-button-text" style="text-align: center;">Выберите свое изображение</span>
+               </label>
+            </div>
+          <label for="password">Password</label>
+          <input class="form-styling" type="text" name="password" placeholder=""/>
+                <button style="  float: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 8px;
+  width: 100%;
+  height: 35px;
+	border: none;
+	border-radius: 20px;
+  margin-top: 23px;
+  background-color: #1059FF;" type="submit">Sign up</button>
+      </form>
+
+
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+
+    <script src="{% static 'js/login.js' %}"></script>
+
+</body>
+</html>

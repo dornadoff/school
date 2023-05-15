@@ -1,0 +1,45 @@
+.example-text::before,
+.example-text::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  background-color: black;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.example-text {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 15px;
+  line-height: 1;
+  text-align: center;
+
+}
+
+
+.button1 {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,.2);
+    border-radius: 50px;
+    color: white;
+    border: 1px black;}
+
+.button {
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 50px;
+    color: black;
+    border: 2px solid rgba(255, 251, 251, 0.2);
+}
+
+.button:hover {
+	background: whitesmoke	;
+
+}
